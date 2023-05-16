@@ -1,26 +1,14 @@
-class client():
-
-    def __init__(self, name, number, qr):
-        self.name = name
-        self.number = number
-        self.qr = qr
-        self.coffeCup = 0
-        self.freeCoffe = 0
-
-    def coffe_plus(self, quantityCoffe):
-        self.coffeCup += quantityCoffe
-
-        while self.coffeCup > 5:
-            self.coffeCup -= 5
-            self.freeCoffe += 1
-
-    def give_freeCoffe(self):
-        self.freeCoffe -= 1
-        print("Выдан новый QR-КОД")
-
-
-
+import os.path
+from telegram.models.vsegdaCoffeDb import DATABASE_NAME
+from aiogram.utils import executor
+from telegram.view.alwaysCoffeBot import dp
+from telegram.models.vsegdaCoffeDb import create_db
 
 
 if __name__ == "__main__":
-    pass
+    db_is_created = os.path.exists(DATABASE_NAME)
+    if not db_is_created:
+        create_db()
+    executor.start_polling(dp, skip_updates=True)
+
+

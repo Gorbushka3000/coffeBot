@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 5 демонстрационная страница</title>
+    <!-- Подключение CSS файла bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Далее может идти подключение любого другого CSS файла сайта -->
+    <link rel="stylesheet">
+</head>
+<body>
+<div class="col-md-8 mx-auto">
+    <form method="post">
+        <h1>Сколько кофе добавить</h1>
+        <h2>у {{client.nameClient}} {{client.coffeCup}} кружек кофе</h2>
+        <input name="plusCoffeCup" id="plusCoffeCup" type="text" class="form-control" aria-label="Text input with dropdown button">
+        <input type="submit" class="btn btn-primary btn-lg" value="Добавить">
+    </form>
+</div>
+</body>
+</html>
